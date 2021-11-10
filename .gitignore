@@ -29,6 +29,8 @@ A complete .gitignore file for Java - https://www.dedunu.info/2014/11/gitignore-
 *.ear
 *.nar
 hs_err_pid*
+allure-results/
+test-output/
 
 ##############################
 ## Maven
