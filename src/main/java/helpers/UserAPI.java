@@ -1,4 +1,7 @@
+package helpers;
+
 import org.json.JSONObject;
+
 import io.restassured.response.Response;
 
 public class UserAPI extends APIHelper {
@@ -8,10 +11,9 @@ public class UserAPI extends APIHelper {
 		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("email", emailAddress);
-		jsonObject.put("id", "ad-123");
+//		jsonObject.put("id", "ad-123");
 		jsonObject.put("password", "mySecretPass234");
 		jsonObject.put("username", userName);
-		
 		String payloadString = jsonObject.toString();
 		Response createUserResponse = APIHelper.post(apiPath, payloadString);
 		
@@ -25,13 +27,9 @@ public class UserAPI extends APIHelper {
 		return createUserWithPayloadResponse;
 	}
 	
-	public static Response updateUser(String userName) { 
+	public static Response updateUser(String payloadString) { 
 		String apiPath = "/Update";
 		
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("username", userName);
-		
-		String payloadString = jsonObject.toString();
 		Response updateUserResponse = APIHelper.put(apiPath, payloadString);
 		
 		return updateUserResponse;
@@ -49,13 +47,9 @@ public class UserAPI extends APIHelper {
 		return readUserResponse;
 	}
 	
-	public static Response deleteUser(String userID) { 
+	public static Response deleteUser(String payloadString) { 
 		String apiPath = "/Delete";
 		
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("id", userID);
-		
-		String payloadString = jsonObject.toString();
 		Response deleteUserResponse = APIHelper.delete(apiPath, payloadString);
 		
 		return deleteUserResponse;

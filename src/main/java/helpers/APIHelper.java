@@ -1,3 +1,4 @@
+package helpers;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 import io.restassured.http.ContentType;
